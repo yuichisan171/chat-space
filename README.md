@@ -27,5 +27,5 @@
 ### 苦戦したこと
 主にメイン画面。ネストやプロパティをどう書くのか大変だったこと。
 
-[全体イメージ][https://gyazo.com/7281855aafaae516a6444cb2bef60d30]
+[全体イメージ](https://gyazo.com/7281855aafaae516a6444cb2bef60d30)
 使用言語:haml,scss
