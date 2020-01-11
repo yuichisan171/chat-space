@@ -1,24 +1,31 @@
-# README
+# Chatspace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+---
+カリキュラムからChatspaceのトップ画面を実装。
 
-Things you may want to cover:
+## 詳細
+---
 
-* Ruby version
+### 構造
+コーディングしたトップ画面の構造は以下の通り。
 
-* System dependencies
+-サイドバー
+  -サイドヘッダー
+    -nameやボタン等のボックス
+  -グループ一覧
+    -グループ名,最新のメッセージ
 
-* Configuration
+-メイン画面
+  -メインヘッダー
+    -現在のグループ,編集ボタン等
+  -メッセージ
+    -name,時間,メッセージ
+  -投稿フォーム
+    -入力フォーム,画像貼り付け機能,送信ボタン
 
-* Database creation
+### 苦戦したこと
+主にメイン画面。ネストやプロパティをどう書くのか大変だったこと。
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[全体イメージ][https://gyazo.com/7281855aafaae516a6444cb2bef60d30]
+使用言語:haml,scss
