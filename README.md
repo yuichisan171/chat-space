@@ -24,8 +24,54 @@
   - 投稿フォーム
     - 入力フォーム,画像貼り付け機能,送信ボタン
 
-### 苦戦したこと
-主にメイン画面。ネストやプロパティをどう書くのか大変だったこと。
-
 [全体イメージ](https://gyazo.com/7281855aafaae516a6444cb2bef60d30)
 使用言語:haml,scss
+
+### DB
+
+#### usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|username|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+##### Association
+- has_many :group_users
+- has_many :groups, through: group_users
+- has_many :messages
+
+#### groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false|
+
+##### Association
+- has_many :group_users
+- has_many :users, through: group_users
+- has_many :messages
+
+#### groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+##### Association
+- belongs_to :group
+- belongs_to :user
+
+#### messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+##### Association
+- belongs_to :user
+- belongs_to :group
+
+### 苦戦したこと
+主にメイン画面。ネストやプロパティをどう書くのか大変だったこと。
