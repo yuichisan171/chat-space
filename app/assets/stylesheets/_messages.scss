@@ -35,8 +35,8 @@ $main-chat_font-color: #333333;
   &__username{
   }
 
-  &__menu{
-    width: 60px;
+  .side-box_btn {
+    display: flex;
   }
 
   i {
