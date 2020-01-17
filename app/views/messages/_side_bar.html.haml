@@ -5,12 +5,15 @@
         = current_user.name
       %ul.side-box_btn
         %li.list
-          = link_to do
+          = link_to new_group_path do
             = icon('fas', 'pen-square', class: 'new-group')
         %li.list
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'edit-group')
   .side-chat__group-list
-    .side-chat__groups
-    .side-chat__group-name techcamp
-    .side-chat__latest-message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side-chat__groups
+        = link_to '#' do
+          .side-chat__group-name
+            = group.name
+          .side-chat__latest-message まだメッセージがありません
