@@ -128,6 +128,10 @@ $main-chat_font-color: #333333;
     padding: 35px 40px;
     overflow: scroll;
 
+    .message {
+      margin: 35px 0 46px 0;
+    }
+
     .upper-info{
       display: flex;
 
