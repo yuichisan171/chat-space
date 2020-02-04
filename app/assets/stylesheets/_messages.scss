@@ -53,6 +53,7 @@ $main-chat_font-color: #333333;
     width: 300px;
     color: $side-chat_font-color;
     font-weight: bold;
+    overflow: scroll;
   }
 
   &__groups{
