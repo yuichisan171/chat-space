@@ -12,6 +12,7 @@ $(function(){
     })
     .done(function(messages) {
       if (messages.length !== 0) {
+        console.log(last_message_id);
         var insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
@@ -28,7 +29,7 @@ $(function(){
     var buildHTML = function(message) {
       if (message.content && message.image) {
         var html = 
-          `<div class="message"　data-message-id=${message.id} >
+          `<div class="message" data-message-id=${message.id} >
             <div class="upper-info">
               <p class="user-name">
                 ${message.user_name}
@@ -46,7 +47,7 @@ $(function(){
           </div>`
       } else if (message.content) {
         var html =
-          `<div class="message"　data-message-id=${message.id}　>
+          `<div class="message" data-message-id=${message.id} >
             <div class="upper-info">
               <p class="user-name">
                 ${message.user_name}
@@ -94,9 +95,9 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
-      $("submit").removeAttr("disabled");
+      $('.submit-btn').prop('disabled', false);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
